@@ -2,14 +2,41 @@ package hospital;
 
 public class Patient {
 
-	public String patientId;
-	public String patientName;
-	public static final int BLOOD_LEVEL = 20;
-	public static final int HEALTH_LEVEL = 10;
-	public int patientBlood = BLOOD_LEVEL;
-	public int patientHealth = HEALTH_LEVEL;
+	private String patientId;
+	private String patientName;
+	private static final int BLOOD_LEVEL = 20;
+	private static final int HEALTH_LEVEL = 10;
+	private int patientBlood;
+	private int patientHealth;
+
+	public Patient(String patientId, String patientName) {
+		this.patientId = patientId;
+		this.patientName = patientName;
+		this.patientBlood = BLOOD_LEVEL;
+		this.patientHealth = HEALTH_LEVEL;
+	}
+	
 	
 	public String getPatientName() {
 		return patientName;
 	}
+
+	public String getPatientId() {
+		return patientId;
+	}
+
+	public int getPatientBlood() {
+		return patientBlood;
+	}
+
+	public int getPatientHealth() {
+		return patientHealth;
+	}
+
+	public void tick() {
+		patientHealth -= 1;
+		patientBlood += 2;
+		
+	return;
+}
 }

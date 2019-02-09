@@ -11,8 +11,8 @@ public class HospitalTest {
 
 	
 	Hospital underTestHospital = new Hospital();
-	Employee underTestEmployee = new Doctor("1111", "Dr. Testy");
-	
+	Employee underTestEmployee = new Doctor("1111", "Dr. Testy", 0, "General");
+	Patient underTestPatient = new Patient("9123", "Bob Loblaw");
 	
 	@Test
 	public void shouldAddEmployeeToHospital() {
@@ -20,5 +20,14 @@ public class HospitalTest {
 			int answer = underTestHospital.getEmployeesLength();
 			assertEquals(answer, 1);
 	}
-			
+	
+	@Test
+	public void shouldAddPatientToHospital() {
+
+			underTestHospital.addPatient(underTestPatient);
+			int answer = underTestHospital.getPatientsLength();
+			assertEquals(answer, 1);
+	}
+	
+	
 }
