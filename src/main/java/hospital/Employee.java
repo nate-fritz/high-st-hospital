@@ -30,6 +30,11 @@ public abstract class Employee {
 	public int getSalary() {
 		return empSalary;
 	}
+	
+	public void giveCare() {
+		Patient.receiveCare();
+
+	}
 
 	public String getSpecialty() {
 		return specialty;

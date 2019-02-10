@@ -13,6 +13,7 @@ public class Surgeon extends Doctor implements CanDrawBlood, CanGiveCare, CanOpe
 	public Surgeon(String empId, String empName, int empSalary, String specialty) {
 		super(empId, empName, empSalary, specialty);
 		this.specialty = specialty;
+
 	}
 	
 	private boolean isOperating = CanOperate.IS_OPERATING;

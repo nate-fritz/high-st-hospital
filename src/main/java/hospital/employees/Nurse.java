@@ -2,7 +2,11 @@ package hospital.employees;
 
 
 
+import java.util.HashMap;
+
+import hospital.AllPatients;
 import hospital.Employee;
+import hospital.Patient;
 import hospital.interfaces.CanDrawBlood;
 import hospital.interfaces.CanGiveCare;
 
@@ -10,7 +14,7 @@ public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 
 
 
-	public Nurse(String empId, String empName, int empSalary, String specialty) {
+	public Nurse(String empId, String empName, int empSalary, String specialty, AllPatients patients) {
 		super(empId, empName, empSalary, specialty);
 	}
 
@@ -31,8 +35,15 @@ public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public HashMap<String,Patient> getAllPatients() {
+	
+		return AllPatients.patients;
+	}
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" +  "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" +  "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]" + "\t[Patients: " + getAllPatients();
 	}
+	
+
 }

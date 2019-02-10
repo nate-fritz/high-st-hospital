@@ -10,9 +10,9 @@ import hospital.employees.Doctor;
 public class HospitalTest {
 
 	
-	Hospital underTestHospital = new Hospital();
+	Hospital underTestHospital = new Hospital(100);
 	Employee underTestEmployee = new Doctor("1111", "Dr. Testy", 0, "General");
-	Patient underTestPatient = new Patient("9123", "Bob Loblaw");
+	Patient underTestPatient = new Patient("9123", "Bob Loblaw", 10, 10);
 	
 	@Test
 	public void shouldAddEmployeeToHospital() {
@@ -29,5 +29,13 @@ public class HospitalTest {
 			assertEquals(answer, 1);
 	}
 	
-	
+	@Test
+	public void cleanlinessShouldDecreaseOnTick() {
+		
+			int answerBefore = underTestHospital.getHospitalCleanliness();
+			underTestHospital.tick();
+			int answerAfter = underTestHospital.getHospitalCleanliness();
+			assertEquals(answerBefore - 15, answerAfter);
+		
+	}
 }

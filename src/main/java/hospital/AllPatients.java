@@ -6,9 +6,15 @@ import java.util.HashMap;
 public class AllPatients {
 
 	
-		private HashMap<String, Patient> patients = new HashMap<String, Patient>();
+	public static HashMap<String, Patient> patients = new HashMap<String, Patient>();
 
 		
+
+		
+		public Collection<Patient> getPatientList() {
+			return patients.values();
+		}
+	
 		public void addPatient(Patient highStHospital) {
 			patients.put(highStHospital.getPatientName(), highStHospital);
 		}
@@ -16,12 +22,6 @@ public class AllPatients {
 		public int getPatientsLength() {
 			return patients.size();
 		}
-		
-		public Collection<Patient> getPatientList() {
-			return patients.values();
-		}
-	
-
 	
 
 }

@@ -7,13 +7,13 @@ public class Patient {
 	private static final int BLOOD_LEVEL = 20;
 	private static final int HEALTH_LEVEL = 10;
 	private int patientBlood;
-	private int patientHealth;
+	private static int patientHealth;
 
-	public Patient(String patientId, String patientName) {
+	public Patient(String patientId, String patientName, int patintBlood, int patientHealth) {
 		this.patientId = patientId;
 		this.patientName = patientName;
 		this.patientBlood = BLOOD_LEVEL;
-		this.patientHealth = HEALTH_LEVEL;
+		Patient.patientHealth = HEALTH_LEVEL;
 	}
 	
 	
@@ -39,4 +39,15 @@ public class Patient {
 		
 	return;
 }
-}
+
+
+	public static int receiveCare() {
+		patientHealth += 10;
+		return patientHealth;
+		
+	}
+
+
+
+		
+	}

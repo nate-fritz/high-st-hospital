@@ -12,7 +12,7 @@ import hospital.employees.VampireJanitor;
 public class Application {
 
 	public static Scanner userInput = new Scanner(System.in);
-	public static Hospital highStHospital = new Hospital();
+	public static Hospital highStHospital = new Hospital(100);
 	
 	public static AllPatients neonatal = new AllPatients();
 	public static AllPatients trauma = new AllPatients();
@@ -25,9 +25,9 @@ public class Application {
 		Employee emp3 = new Doctor("1003", "Hank McCoy", 0, "Colorectal");
 		Employee emp4 = new Surgeon("2001", "Steve Strange", 0, "Plastic");
 		Employee emp5 = new Surgeon("2002", "Henry Pym", 0, "Brain");
-		Employee emp6 = new Nurse("3001", "Janet VanDyne", 0, "Neonatal");
-		Employee emp7 = new Nurse("3002", "Scott Summers", 0, "Trauma");
-		Employee emp8 = new Nurse("3003", "Sam Guthrie", 0, "Anesthetist");
+		Employee emp6 = new Nurse("3001", "Janet VanDyne", 0, "Neonatal", neonatal);
+		Employee emp7 = new Nurse("3002", "Scott Summers", 0, "Trauma", trauma);
+		Employee emp8 = new Nurse("3003", "Sam Guthrie", 0, "Anesthetist", anesthesia);
 		Employee emp9 = new Receptionist("4001", "Gwen Stacy", 0, "N/A");
 		Employee emp10 = new Janitor("5001", "James Howlett", 0, "N/A");
 		Employee emp11 = new VampireJanitor("5002", "Michael Morbius", 0, "N/A");
@@ -44,19 +44,7 @@ public class Application {
 		highStHospital.addEmployee(emp10);
 		highStHospital.addEmployee(emp11);
 		
-		Patient pat1 = new Patient("9123", "John Doe");
-		Patient pat2 = new Patient("9321", "Jane Doe");
-		Patient pat3 = new Patient("9456", "Jim Doe");
-		Patient pat4 = new Patient("9654", "Jenn Doe");
-		Patient pat5 = new Patient("9789", "Jack Doe");
-		Patient pat6 = new Patient("9987", "Jill Doe");
-		
-		anesthesia.addPatient(pat1);
-		anesthesia.addPatient(pat6);		
-		neonatal.addPatient(pat2);
-		neonatal.addPatient(pat4);
-		trauma.addPatient(pat3);
-		trauma.addPatient(pat5);
+
 		
 
 //		Welcome
@@ -137,6 +125,7 @@ public class Application {
 					break;
 					
 				case "4":
+					System.out.println("");
 					break;
 					
 				case "9":

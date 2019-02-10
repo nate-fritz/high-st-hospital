@@ -1,6 +1,7 @@
 package hospital.employees;
 
 import hospital.Employee;
+import hospital.Patient;
 import hospital.interfaces.CanDrawBlood;
 import hospital.interfaces.CanGiveCare;
 import hospital.interfaces.TakesPhoneCalls;
@@ -28,7 +29,7 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 
 	@Override
 	public void giveCare() {
-		// TODO Auto-generated method stub
+		Patient.receiveCare();
 
 	}
 
@@ -53,5 +54,7 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 		toggleIsOnPhone();
 		return;
 	}
+	
+
 
 }
