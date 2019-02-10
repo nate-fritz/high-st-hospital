@@ -13,39 +13,54 @@ public class Application {
 
 	public static Scanner userInput = new Scanner(System.in);
 	public static Hospital highStHospital = new Hospital(100);
-	
-	public static AllPatients neonatal = new AllPatients();
-	public static AllPatients trauma = new AllPatients();
-	public static AllPatients anesthesia = new AllPatients();
 
 	public static void main(String[] args) {
 
-		Employee emp1 = new Doctor("1001", "Reed Richards", 0, "Heart");
-		Employee emp2 = new Doctor("1002", "Bruce Banner", 0, "Brain");
-		Employee emp3 = new Doctor("1003", "Hank McCoy", 0, "Colorectal");
-		Employee emp4 = new Surgeon("2001", "Steve Strange", 0, "Plastic");
-		Employee emp5 = new Surgeon("2002", "Henry Pym", 0, "Brain");
-		Employee emp6 = new Nurse("3001", "Janet VanDyne", 0, "Neonatal", neonatal);
-		Employee emp7 = new Nurse("3002", "Scott Summers", 0, "Trauma", trauma);
-		Employee emp8 = new Nurse("3003", "Sam Guthrie", 0, "Anesthetist", anesthesia);
-		Employee emp9 = new Receptionist("4001", "Gwen Stacy", 0, "N/A");
-		Employee emp10 = new Janitor("5001", "James Howlett", 0, "N/A");
-		Employee emp11 = new VampireJanitor("5002", "Michael Morbius", 0, "N/A");
+//		Add pre-built employees 
+		Doctor doc1 = new Doctor("1001", "Reed Richards", 0, "Heart");
+		Doctor doc2 = new Doctor("1002", "Bruce Banner", 0, "Brain");
+		Doctor doc3 = new Doctor("1003", "Hank McCoy", 0, "Colorectal");
+		Surgeon surg1 = new Surgeon("2001", "Steve Strange", 0, "Plastic");
+		Surgeon surg2 = new Surgeon("2002", "Henry Pym", 0, "Brain");
+		Nurse nurse1 = new Nurse("3001", "Janet VanDyne", 0, "Neonatal");
+		Nurse nurse2 = new Nurse("3002", "Scott Summers", 0, "Anesthesia");
+		Nurse nurse3 = new Nurse("3003", "Sam Guthrie", 0, "Trauma");
+		Receptionist recep1 = new Receptionist("4001", "Gwen Stacy", 0, "N/A");
+		Janitor jani1 = new Janitor("5001", "James Howlett", 0, "N/A");
+		VampireJanitor jani2 = new VampireJanitor("5002", "Michael Morbius", 0, "N/A");
 
-		highStHospital.addEmployee(emp1);
-		highStHospital.addEmployee(emp2);
-		highStHospital.addEmployee(emp3);
-		highStHospital.addEmployee(emp4);
-		highStHospital.addEmployee(emp5);
-		highStHospital.addEmployee(emp6);
-		highStHospital.addEmployee(emp7);
-		highStHospital.addEmployee(emp8);
-		highStHospital.addEmployee(emp9);
-		highStHospital.addEmployee(emp10);
-		highStHospital.addEmployee(emp11);
-		
+		highStHospital.addEmployee(doc1);
+		highStHospital.addEmployee(doc2);
+		highStHospital.addEmployee(doc3);
+		highStHospital.addEmployee(surg1);
+		highStHospital.addEmployee(surg2);
+		highStHospital.addEmployee(nurse1);
+		highStHospital.addEmployee(nurse2);
+		highStHospital.addEmployee(nurse3);
+		highStHospital.addEmployee(recep1);
+		highStHospital.addEmployee(jani1);
+		highStHospital.addEmployee(jani2);
 
-		
+//		Add pre-built patients
+		Patient patient1 = new Patient("9999", "John Doe");
+		Patient patient2 = new Patient("9988", "Jane Doe");
+		Patient patient3 = new Patient("9977", "Jim Doe");
+		Patient patient4 = new Patient("9966", "Jenn Doe");
+		Patient patient5 = new Patient("9955", "Jack Doe");
+		Patient patient6 = new Patient("9944", "Jill Doe");
+
+		highStHospital.addPatient(patient1);
+		highStHospital.addPatient(patient2);
+		highStHospital.addPatient(patient3);
+		highStHospital.addPatient(patient4);
+		highStHospital.addPatient(patient5);
+		highStHospital.addPatient(patient6);
+		nurse1.addNursePatient(patient1);
+		nurse1.addNursePatient(patient2);
+		nurse2.addNursePatient(patient3);
+		nurse2.addNursePatient(patient4);
+		nurse3.addNursePatient(patient5);
+		nurse3.addNursePatient(patient5);
 
 //		Welcome
 		System.out.println("-----------------------------------------------------");
@@ -80,7 +95,7 @@ public class Application {
 					System.out.println("3. Return to main menu");
 //					Scanner for user input within this sub-menu.	
 					String userSubMenuChoice = userInput.nextLine();
-					
+
 					switch (userSubMenuChoice) {
 					case "1":
 						highStHospital.allEmployeeStatus();
@@ -97,7 +112,7 @@ public class Application {
 
 					}
 					break;
-					
+
 				case "2":
 
 					System.out.println("");
@@ -106,7 +121,7 @@ public class Application {
 					System.out.println("3. Return to main menu");
 //					Scanner for user input within this sub-menu.	
 					String userSubMenuChoice2 = userInput.nextLine();
-					
+
 					switch (userSubMenuChoice2) {
 					case "1":
 						System.out.println("Option under construction");
@@ -120,14 +135,14 @@ public class Application {
 
 					}
 					break;
-					
+
 				case "3":
 					break;
-					
+
 				case "4":
 					System.out.println("");
 					break;
-					
+
 				case "9":
 					System.out.println("Logging out of system.");
 					System.exit(0);

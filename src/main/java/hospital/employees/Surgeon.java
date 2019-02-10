@@ -38,7 +38,7 @@ public class Surgeon extends Doctor implements CanDrawBlood, CanGiveCare, CanOpe
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
 				+ getEmpName() + "]\t\t[Currently Operating: \t" + getIsOperating()
 				+ "]";
 	}

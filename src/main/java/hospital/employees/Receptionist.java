@@ -19,7 +19,7 @@ public class Receptionist extends Employee implements TakesPhoneCalls {
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName()
+		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName()
 				+ "]\t\t[Currently On Phone: \t" + getIsOnPhone() + "]";
 	}
 

@@ -10,14 +10,16 @@ public class DoctorTest {
 
 
 		Employee underTestDoc = new Doctor("1001", "Test Doc", 0, "Heart");
-		Patient underTestPat = new Patient("9999", "Jane Doe", 10, 10);
+		Patient underTestPat = new Patient("9999", "Jane Doe");
+		
 		
 		@Test
 		public void shouldIncreaseHealth() {
-
-			underTestDoc.giveCare();
-			int answer  = underTestPat.getPatientHealth();	
-			assertEquals(answer, 20);
+			underTestPat.tick();
+			int answerBefore  = underTestPat.getPatientHealth();	
+			underTestDoc.giveCare(underTestPat);
+			int answerAfter = underTestPat.getPatientHealth();
+			assertEquals(answerBefore + 10, answerAfter);
 
 		}
 	

@@ -1,7 +1,6 @@
 package hospital.employees;
 
 import hospital.Employee;
-import hospital.Patient;
 import hospital.interfaces.CanDrawBlood;
 import hospital.interfaces.CanGiveCare;
 import hospital.interfaces.TakesPhoneCalls;
@@ -27,15 +26,11 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 
 	}
 
-	@Override
-	public void giveCare() {
-		Patient.receiveCare();
 
-	}
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
 				+ getEmpName() + "]\t\t[Currently On Phone: \t" + getIsOnPhone()
 				+ "]";
 	}
@@ -53,6 +48,11 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 	public void tick() {
 		toggleIsOnPhone();
 		return;
+	}
+
+	@Override
+	public void giveCare() {
+		
 	}
 	
 

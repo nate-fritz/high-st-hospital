@@ -2,19 +2,20 @@ package hospital.employees;
 
 
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
-import hospital.AllPatients;
+
 import hospital.Employee;
-import hospital.Patient;
 import hospital.interfaces.CanDrawBlood;
 import hospital.interfaces.CanGiveCare;
 
 public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 
 
-
-	public Nurse(String empId, String empName, int empSalary, String specialty, AllPatients patients) {
+	private ArrayList<Object> nursePatients = new ArrayList<Object>(); 
+	
+	
+	public Nurse(String empId, String empName, int empSalary, String specialty) {
 		super(empId, empName, empSalary, specialty);
 	}
 
@@ -36,14 +37,14 @@ public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 		
 	}
 	
-	public HashMap<String,Patient> getAllPatients() {
-	
-		return AllPatients.patients;
-	}
+
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" +  "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]" + "\t[Patients: " + getAllPatients();
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]" + "\t\t[Patients: " + nursePatients.toString() + "]";
 	}
 	
 
+	public void addNursePatient(Object patient) {
+		nursePatients.add(patient);
+	}
 }

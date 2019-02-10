@@ -30,10 +30,10 @@ public abstract class Employee {
 	public int getSalary() {
 		return empSalary;
 	}
-	
-	public void giveCare() {
-		Patient.receiveCare();
 
+	public void giveCare(Patient patient) {
+		patient.receiveCare();
+		return;
 	}
 
 	public String getSpecialty() {
@@ -45,14 +45,13 @@ public abstract class Employee {
 	}
 
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + empId + "]  \t[Name: " + empName
-				+ "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + empId + "]  \t[Name: " + empName + "]";
 	}
-	
+
 	public String displaySalary() {
-		return "[ID: " + empId + "]  \t[Name: " + empName  + "]\t \t[Salary: $" + calcPay() + "]";
+		return "[ID: " + empId + "]  \t[Name: " + empName + "]\t \t[Salary: $" + calcPay() + "]";
 	}
-	
+
 	public void tick() {
 		return;
 	}

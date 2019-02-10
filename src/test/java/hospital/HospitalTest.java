@@ -12,7 +12,7 @@ public class HospitalTest {
 	
 	Hospital underTestHospital = new Hospital(100);
 	Employee underTestEmployee = new Doctor("1111", "Dr. Testy", 0, "General");
-	Patient underTestPatient = new Patient("9123", "Bob Loblaw", 10, 10);
+	Patient underTestPatient = new Patient("9123", "Bob Loblaw");
 	
 	@Test
 	public void shouldAddEmployeeToHospital() {
