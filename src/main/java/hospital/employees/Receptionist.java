@@ -12,15 +12,15 @@ public class Receptionist extends Employee implements TakesPhoneCalls {
 	private boolean isOnPhone = TakesPhoneCalls.IS_ON_PHONE;
 
 	@Override
-	public int calcPay() {
+	public int calculatePay() {
 		int empSalary = 45000;
 		return empSalary;
 	}
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName()
-				+ "]\t\t[Currently On Phone: \t" + getIsOnPhone() + "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: "
+				+ getEmpId() + "]  \t[Name: " + getEmpName() + "]\t\t[Currently On Phone: \t" + getIsOnPhone() + "]";
 	}
 
 	@Override
@@ -38,4 +38,6 @@ public class Receptionist extends Employee implements TakesPhoneCalls {
 		return;
 
 	}
+
+
 }

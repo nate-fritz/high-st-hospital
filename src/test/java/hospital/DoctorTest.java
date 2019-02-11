@@ -10,7 +10,7 @@ public class DoctorTest {
 
 
 		Employee underTestDoc = new Doctor("1001", "Test Doc", 0, "Heart");
-		Patient underTestPat = new Patient("9999", "Jane Doe");
+	Patient underTestPat = new Patient("9999", "Jane Doe");
 		
 		
 		@Test

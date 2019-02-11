@@ -20,7 +20,7 @@ public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 	}
 
 	@Override
-	public int calcPay() {
+	public int calculatePay() {
 		int empSalary = 50000;
 		return empSalary;
 	}
@@ -47,4 +47,6 @@ public class Nurse extends Employee implements CanDrawBlood, CanGiveCare {
 	public void addNursePatient(Object patient) {
 		nursePatients.add(patient);
 	}
+
+
 }

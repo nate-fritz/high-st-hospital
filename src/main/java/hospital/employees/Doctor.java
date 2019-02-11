@@ -14,7 +14,7 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 	private boolean isOnPhone = TakesPhoneCalls.IS_ON_PHONE;
 
 	@Override
-	public int calcPay() {
+	public int calculatePay() {
 		int empSalary = 90000;
 		return empSalary;
 
@@ -54,6 +54,8 @@ public class Doctor extends Employee implements CanDrawBlood, CanGiveCare, Takes
 	public void giveCare() {
 		
 	}
+
+
 	
 
 

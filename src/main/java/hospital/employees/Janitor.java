@@ -15,30 +15,30 @@ public class Janitor extends Employee {
 	}
 
 	@Override
-	public int calcPay() {
+	public int calculatePay() {
 		int empSalary = 40000;
 		return empSalary;
 	}
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
-				+ getEmpName() + "]\t\t[Currently Sweeping: \t" + getIsSweeping()
-				+ "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t"
+				+ "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]\t\t[Currently Sweeping: \t"
+				+ getIsSweeping() + "]";
 	}
 
 	private boolean getIsSweeping() {
 		return isSweeping;
 	}
-	
+
 	public void toggleIsSweeping() {
-		isSweeping  = !isSweeping;
+		isSweeping = !isSweeping;
 		return;
 	}
-	
+
 	public void tick() {
 		toggleIsSweeping();
 		return;
 	}
-	
+
 }

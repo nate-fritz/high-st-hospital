@@ -2,14 +2,15 @@ package hospital;
 
 public abstract class Employee {
 
-	private String empId;
+	private String employeeId;
 	private String empName;
 	private int empSalary;
 	private String specialty;
 	private boolean isOperating;
+	public boolean isSweeping;
 
 	public Employee(String empId, String empName, int empSalary, String specialty) {
-		this.empId = empId;
+		this.employeeId = empId;
 		this.empName = empName;
 		this.empSalary = empSalary;
 		this.specialty = specialty;
@@ -17,14 +18,14 @@ public abstract class Employee {
 
 	}
 
-	public abstract int calcPay();
+	public abstract int calculatePay();
 
 	public String getEmpName() {
 		return empName;
 	}
 
 	public String getEmpId() {
-		return empId;
+		return employeeId;
 	}
 
 	public int getSalary() {
@@ -35,6 +36,8 @@ public abstract class Employee {
 		patient.receiveCare();
 		return;
 	}
+	
+
 
 	public String getSpecialty() {
 		return specialty;
@@ -45,14 +48,16 @@ public abstract class Employee {
 	}
 
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + empId + "]  \t[Name: " + empName + "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[ID: " + employeeId + "]  \t[Name: " + empName + "]";
 	}
 
 	public String displaySalary() {
-		return "[ID: " + empId + "]  \t[Name: " + empName + "]\t \t[Salary: $" + calcPay() + "]";
+		return "[ID: " + employeeId + "]  \t[Name: " + empName + "]\t \t[Salary: $" + calculatePay() + "]";
 	}
 
 	public void tick() {
 		return;
 	}
+
+
 }

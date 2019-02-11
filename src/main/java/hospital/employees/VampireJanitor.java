@@ -11,7 +11,6 @@ public class VampireJanitor extends Janitor implements CanDrawBlood {
 
 	public boolean isSweeping;
 
-
 	@Override
 	public void drawBlood() {
 		// TODO Auto-generated method stub
@@ -20,19 +19,19 @@ public class VampireJanitor extends Janitor implements CanDrawBlood {
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName()
-				+ "]\t\t[Currently Sweeping: \t" + getIsSweeping() + "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: "
+				+ getEmpId() + "]  \t[Name: " + getEmpName() + "]\t\t[Currently Sweeping: \t" + getIsSweeping() + "]";
 	}
-	
+
 	private boolean getIsSweeping() {
 		return isSweeping;
 	}
-	
+
 	public void toggleIsSweeping() {
-		isSweeping  = !isSweeping;
+		isSweeping = !isSweeping;
 		return;
 	}
-	
+
 	public void tick() {
 		toggleIsSweeping();
 		return;

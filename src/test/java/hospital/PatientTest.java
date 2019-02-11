@@ -25,6 +25,36 @@ public class PatientTest {
 		
 		
 	}
+	
+	@Test
+	public void shouldHaveBloodDrawn() {
+		underTestPat.haveBloodDrawn();
+		int answer = underTestPat.getPatientBlood();
+		assertEquals(answer, 10);
+	}
 
+	@Test
+	public void shouldNotHaveBloodDrawnPastZero() {
+		underTestPat.haveBloodDrawn();
+		underTestPat.haveBloodDrawn();
+		underTestPat.haveBloodDrawn();
+		int answer = underTestPat.getPatientBlood();
+		assertEquals(answer, 0);
+	}
 
+	@Test
+	public void shouldReceiveCare() {
+		underTestPat.tick();
+		underTestPat.receiveCare();
+		int answer = underTestPat.getPatientHealth();
+		assertEquals(answer, 10);
+	}
+
+	@Test
+	public void shouldNotReceiveCarePastTen() {
+
+		underTestPat.receiveCare();
+		int answer = underTestPat.getPatientHealth();
+		assertEquals(answer, 10);
+	}
 }

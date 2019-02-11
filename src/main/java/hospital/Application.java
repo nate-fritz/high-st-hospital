@@ -68,7 +68,9 @@ public class Application {
 		System.out.println("-----------------------------------------------------");
 
 //		Game Loop
-		while (true) {
+		boolean mainMenu = true;
+		while (mainMenu) {
+
 			System.out.println("");
 			System.out.println("Pick an option from the following list:");
 			System.out.println("1. Access Employee Records");
@@ -82,20 +84,20 @@ public class Application {
 			System.out.println("9. Exit the system");
 
 //			Scanner for user input within this menu.
-			String userMenuChoice = userInput.nextLine();
+			String userMainMenuChoice = userInput.nextLine();
 
-			while (userMenuChoice != "exit") {
-				switch (userMenuChoice) {
-				case "1":
-
+			switch (userMainMenuChoice) {
+			case "1":
+				boolean employeeMenu = true;
+				while (employeeMenu) {
 					System.out.println("");
 					System.out.println("Choose the following options from the Employee Dashboard: \n");
 					System.out.println("1. View current status of all employees");
 					System.out.println("2. View salaries of all employees");
 					System.out.println("3. Return to main menu");
 //					Scanner for user input within this sub-menu.	
-					String userSubMenuChoice = userInput.nextLine();
 
+					String userSubMenuChoice = userInput.nextLine();
 					switch (userSubMenuChoice) {
 					case "1":
 						highStHospital.allEmployeeStatus();
@@ -104,50 +106,94 @@ public class Application {
 						highStHospital.allEmployeeSalaries();
 						break;
 					case "3":
-						userMenuChoice = "exit";
+						employeeMenu = false;
 						break;
 					default:
 						System.out.println("Please try another option.");
 						break;
 
 					}
-					break;
 
-				case "2":
-
+				}
+				break;
+			case "2":
+				boolean patientMenu = true;
+				while (patientMenu) {
 					System.out.println("");
 					System.out.println("Choose the following options from the Patient Dashboard: \n");
 					System.out.println("1. View current status of all patients");
 					System.out.println("3. Return to main menu");
 //					Scanner for user input within this sub-menu.	
-					String userSubMenuChoice2 = userInput.nextLine();
+					String userSubMenuChoice = userInput.nextLine();
 
-					switch (userSubMenuChoice2) {
+					switch (userSubMenuChoice) {
 					case "1":
-						System.out.println("Option under construction");
+						highStHospital.allPatientStatus();
 						break;
 					case "3":
-						userMenuChoice = "exit";
+						patientMenu = false;
 						break;
 					default:
 						System.out.println("Please try another option.");
 						break;
 
 					}
-					break;
 
-				case "3":
-					break;
-
-				case "4":
-					System.out.println("");
-					break;
-
-				case "9":
-					System.out.println("Logging out of system.");
-					System.exit(0);
-					break;
 				}
+				break;
+
+			case "3":
+				System.out.println("Current status of hospital: " + highStHospital.getHospitalCleanliness()+ "%");
+				highStHospital.cleanlinessWarning();
+				highStHospital.tick();
+				break;
+
+			case "4":
+				boolean assignmentMenu = true;
+
+				while (assignmentMenu) {
+
+					System.out.println("Employee Dashboard - Assign Duties\n");
+					System.out.println("1. Assign all doctors on their rounds to care for patients");
+					System.out.println("2. Assign all surgeons into the operating room");
+					System.out.println("3. Assign all nurses to draw blood from patients");
+					System.out.println("4. Assign all janitors to sweep the floors");
+					System.out.println("5. Assign all receptionists to answer the phones.");
+					System.out.println("9. Return to main menu.");
+					String userSubMenuChoice2 = userInput.nextLine();
+					switch (userSubMenuChoice2) {
+					case "1":
+						highStHospital.giveCareAll();
+						System.out.println("\nAll doctors start making their rounds, and the health of the patients improves.\n");
+						break;
+					case "2":
+						highStHospital.operatingAll();
+						System.out.println("\nAll of the surgeons report to the operating room.  Patient health improves, but some blood got all over the floors.\n");
+						break;
+					case "3":
+						highStHospital.drawBloodAll();
+						System.out.println("\nThe nurses go about the hospital, drawing blood from patients.");
+						break;
+					case "4":
+						highStHospital.sweepFloorsAll();
+						System.out.println("\nThe janitors go about the hospital cleaning.  The place is starting to look much cleaner!\n");
+						break;
+					case "5":
+						break;
+					case "9":
+						assignmentMenu = false;
+						break;
+
+					}
+					highStHospital.tick();
+
+				}
+				break;
+			case "9":
+				System.out.println("Logging out of system.");
+				mainMenu = false;
+				System.exit(0);
+				break;
 
 			}
 

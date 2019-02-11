@@ -4,22 +4,20 @@ import hospital.interfaces.CanDrawBlood;
 import hospital.interfaces.CanGiveCare;
 import hospital.interfaces.CanOperate;
 
-
 public class Surgeon extends Doctor implements CanDrawBlood, CanGiveCare, CanOperate {
 
 	public String specialty;
-
 
 	public Surgeon(String empId, String empName, int empSalary, String specialty) {
 		super(empId, empName, empSalary, specialty);
 		this.specialty = specialty;
 
 	}
-	
+
 	private boolean isOperating = CanOperate.IS_OPERATING;
 
 	@Override
-	public int calcPay() {
+	public int calculatePay() {
 		int empSalary = 120000;
 		return empSalary;
 	}
@@ -38,10 +36,11 @@ public class Surgeon extends Doctor implements CanDrawBlood, CanGiveCare, CanOpe
 
 	@Override
 	public String toString() {
-		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t" + "\t[ID: " + getEmpId() + "]  \t[Name: "
-				+ getEmpName() + "]\t\t[Currently Operating: \t" + getIsOperating()
-				+ "]";
+		return "[Job: " + this.getClass().getSimpleName() + "]\t" + "\t[Specialty: " + getSpecialty() + "]\t"
+				+ "\t[ID: " + getEmpId() + "]  \t[Name: " + getEmpName() + "]\t\t[Currently Operating: \t"
+				+ getIsOperating() + "]";
 	}
+
 	@Override
 	public void toggleIsOperating() {
 		isOperating = !isOperating;
@@ -51,11 +50,10 @@ public class Surgeon extends Doctor implements CanDrawBlood, CanGiveCare, CanOpe
 	public boolean getIsOperating() {
 		return isOperating;
 	}
-	
+
 	public void tick() {
 		toggleIsOperating();
 		return;
 	}
-
 
 }
